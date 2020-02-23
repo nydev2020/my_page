@@ -1,0 +1,11 @@
+%h2.showBlog_title
+  タイトル
+%h3.showBlog_title
+  = @blog.title
+%p.showBlog_text
+  = @blog.text
+  
+.showBlog__edit
+= link_to '編集', edit_admin_blog_path{blog.id}
+.showBlog__destroy
+= link_to '削除', admin_blog_path, method: :delete

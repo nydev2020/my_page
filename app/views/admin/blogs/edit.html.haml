@@ -1,0 +1,12 @@
+.blog
+= form_with(model: [:admin, @blog]) do |f|
+  .blog__form
+    .blig__form__title
+    = f.label :タイトル
+    = f.text_field :title, placeholder: 'タイトル'
+    .blog__form__text
+    = f.label :ブログ本文
+    = f.text_area :text, placeholder: 'blog本文'
+    .blog_form__submit
+    = f.submit '投稿'
+    

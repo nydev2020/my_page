@@ -4,5 +4,12 @@
 
 %h1 最新の投稿
 - @blog[0..9].each do |blog|
-    = blog.title
-    = blog.created_at
+  .blogBox
+    .blogBox__content
+      = link_to "#{blog.id}", admin_blog_path(blog.id)
+      .blogBox__content__title
+        タイトル
+        = blog.title
+      .blogBox__content__created_at
+        投稿日
+        = blog.created_at
