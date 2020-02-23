@@ -1,2 +1,8 @@
 %h1 Homes#index
 %p Find me in app/views/homes/index.html.haml
+
+
+%h1 最新の投稿
+- @blog[0..9].each do |blog|
+    = blog.title
+    = blog.created_at
