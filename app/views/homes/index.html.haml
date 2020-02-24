@@ -1,30 +1,41 @@
 .homeContent
   
   .homeContent__left
-    %h1 最新のブログ
-    = link_to '全て', admin_blogs_path
-
-    - @blog[0..9].each do |blog|
+    .homeContent__left__head 最新の投稿
+    - @blog[0..6].each do |blog|
       .blogBox
         .blogBox__content
           .blogBox__content__title
-            タイトル
-            = link_to "#{blog.title}", admin_blog_path(blog.id)
-          .blogBox__content__created_at
-            投稿日
+            Title
+            = link_to "#{blog.title}", admin_blog_path(blog.id), class: 'blog__page'
+          .blogBox__content__createtime
+            Created At
             = blog.created_at
-  
+    .homeContent__left__foot
+      = link_to 'ALL', admin_blogs_path, class: 'blog__all'
+
+
   .homeContent__center
-    %h1 最新の画像
-    = link_to '全て', '#'
+    .homeContent__center__head 最新の投稿
+    -# - @blog[0..6].each do |blog|
+      .galleryBox
+        .galeryBox__content
+          .galleryBox__content__title
+            Title
+            = link_to "#{blog.title}", admin_blog_path(blog.id), class: 'blog__page'
+          .galleryBox__content__createtime
+            Created At
+            = blog.created_at
+    .homeContent__center__foot
+      = link_to 'ALL', '#', class: 'gallery__all'
 
 
   .homeContent__right
     %ul.nav__edit
-      %li= link_to 'HOME', '#'
-      %li= link_to 'BLOG', new_admin_blog_path
-      %li= link_to 'GALLERY', '#'
-      %li= link_to 'SHOP', '#'
+      %li= link_to 'HOME', root_path , class: 'home__page'
+      %li= link_to 'BLOG', new_admin_blog_path, class: 'blog__page'
+      %li= link_to 'GALLERY', '#', class: 'gallery__page'
+      %li= link_to 'SHOP', '#', class: 'shop__page'
       - if current_user.admin?
         %li= link_to 'ADMIN', user_path(current_user), class: 'admin__page'
         %li= link_to 'BLOG', new_admin_blog_path, class: 'write__blog'

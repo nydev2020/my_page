@@ -5,9 +5,50 @@
 
   &__left {
     width: 40%;
+    &__head {
+      font-size: 22px;
+    }
+    .blogBox {
+      padding: 0 20px;
+      &__content {
+        margin-top: 10px;
+        font-size: 18px;
+        border-bottom: 1px solid #999;
+        &__title {
+          .blog__page {
+            text-decoration: none;
+            margin-left: 20px;
+          }
+        }
+        &__createtime {
+          text-align: right;
+          font-size: 12px;
+        }
+      }
+    }
+    .blog__all {
+      text-align: right;
+      text-decoration: none;
+    }
+    &__foot {
+      margin-top: 10px;
+      text-align: end;
+    }
   }
   &__center {
     width: 60%;
+    &__head {
+      font-size: 22px;
+    }
+    
+    
+    .gallery__all {
+      text-decoration: none;
+    }
+    &__foot {
+      margin-top: 10px;
+      text-align: end;
+    }
   }
 
   &__right {
@@ -17,16 +58,31 @@
       li {
         margin-bottom: 20px;
       }
+      .home__page {
+        text-decoration: none;
+      }
+      .blog__page {
+        text-decoration: none;
+      }
+      .gallery__page {
+        text-decoration: none;
+      }
+      .shop__page {
+        text-decoration: none;
+      }
       .admin__page {
-        
+        text-decoration: none;
       }
       .write__blog {
+        text-decoration: none;
         
       }
       .my__page {
+        text-decoration: none;
         
       }
       .log__out {
+        text-decoration: none;
         
       }
     }
