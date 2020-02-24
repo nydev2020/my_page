@@ -12,6 +12,8 @@
 
 
 %h1 最新の投稿
+= link_to '全てのブログを読む', admin_blogs_path
+
 - @blog[0..9].each do |blog|
   .blogBox
     .blogBox__content

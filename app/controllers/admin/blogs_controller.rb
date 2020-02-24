@@ -1,6 +1,9 @@
 class Admin::BlogsController < ApplicationController
   before_action :authenticate_user!
-  
+  def index
+    @blog = Blog.all.page(params[:page]).per(3)
+  end
+
   def new
     @blog = Blog.new
   end

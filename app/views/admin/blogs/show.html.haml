@@ -9,8 +9,11 @@
       = @blog.text
 
     .showBlog__content__page
-      = link_to '前へ', root_path, class: 'page__pre'
-      = link_to '次へ', root_path, class: 'page__post'
+      - if @blog.previous.present?
+        = link_to '前へ', admin_blog_path(@blog.previous), class: 'page__back'
+      = link_to 'TOPへ戻る', root_path, class: 'page__home'
+      - if @blog.next.present?
+        = link_to '', admin_blog_path(@blog.next), class: 'page__next'
 
     .showBlog__content__change
       - if current_user.admin?

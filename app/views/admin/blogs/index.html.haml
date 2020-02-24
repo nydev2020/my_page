@@ -1,0 +1,12 @@
+.indexBlog
+  .indexBlog__main
+    .indexBlog__main__top
+      %h1 タイトル一覧
+    .indexBlog__main__middle
+      - @blog.each do |blog|
+        .indexBlog__main__middle__title タイトル
+        = link_to "#{blog.title}", admin_blog_path(blog.id)
+        .indexBlog__main__middle__created_at 投稿日時
+        = blog.created_at
+    .indexBlog__main__bottom
+      = paginate(@blog)
