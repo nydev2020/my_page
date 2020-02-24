@@ -2,14 +2,22 @@
 %p Find me in app/views/homes/index.html.haml
 
 
+- if current_user.admin?
+  = link_to '管理者ページへ', user_path(current_user)
+  = link_to 'ブログ投稿ページへ', new_admin_blog_path
+- else
+  = link_to 'マイページへ', user_path(current_user.id)
+
+= link_to 'ログアウト', destroy_user_session_path, method: :delete, redirect_to: :new_user_session_path
+
+
 %h1 最新の投稿
 - @blog[0..9].each do |blog|
   .blogBox
     .blogBox__content
-      = link_to "#{blog.id}", admin_blog_path(blog.id)
       .blogBox__content__title
         タイトル
-        = blog.title
+        = link_to "#{blog.title}", admin_blog_path(blog.id)
       .blogBox__content__created_at
         投稿日
         = blog.created_at
