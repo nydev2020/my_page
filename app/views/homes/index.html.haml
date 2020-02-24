@@ -1,25 +1,34 @@
-%h1 tech::転職
-%h2 あと３日で完成
+.homeContent
+  
+  .homeContent__left
+    %h1 最新のブログ
+    = link_to '全て', admin_blogs_path
+
+    - @blog[0..9].each do |blog|
+      .blogBox
+        .blogBox__content
+          .blogBox__content__title
+            タイトル
+            = link_to "#{blog.title}", admin_blog_path(blog.id)
+          .blogBox__content__created_at
+            投稿日
+            = blog.created_at
+  
+  .homeContent__center
+    %h1 最新の画像
+    = link_to '全て', '#'
 
 
-- if current_user.admin?
-  = link_to '管理者ページへ', user_path(current_user)
-  = link_to 'ブログ投稿ページへ', new_admin_blog_path
-- else
-  = link_to 'マイページへ', user_path(current_user.id)
+  .homeContent__right
+    %ul.nav__edit
+      %li= link_to 'HOME', '#'
+      %li= link_to 'BLOG', new_admin_blog_path
+      %li= link_to 'GALLERY', '#'
+      %li= link_to 'SHOP', '#'
+      - if current_user.admin?
+        %li= link_to 'ADMIN', user_path(current_user), class: 'admin__page'
+        %li= link_to 'BLOG', new_admin_blog_path, class: 'write__blog'
+      - else
+        %li= link_to 'MYPAGE', user_path(current_user.id), class: 'my__page'
 
-= link_to 'ログアウト', destroy_user_session_path, method: :delete, redirect_to: :new_user_session_path
-
-
-%h1 最新の投稿
-= link_to '全てのブログを読む', admin_blogs_path
-
-- @blog[0..9].each do |blog|
-  .blogBox
-    .blogBox__content
-      .blogBox__content__title
-        タイトル
-        = link_to "#{blog.title}", admin_blog_path(blog.id)
-      .blogBox__content__created_at
-        投稿日
-        = blog.created_at
+      %li= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: 'log__out'

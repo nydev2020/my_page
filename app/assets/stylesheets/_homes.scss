@@ -1,0 +1,35 @@
+.homeContent {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 10px 0 100px;
+
+  &__left {
+    width: 40%;
+  }
+  &__center {
+    width: 60%;
+  }
+
+  &__right {
+    .nav__edit {
+      height: 100vh;
+      margin: 0 120px 0 30px;
+      li {
+        margin-bottom: 20px;
+      }
+      .admin__page {
+        
+      }
+      .write__blog {
+        
+      }
+      .my__page {
+        
+      }
+      .log__out {
+        
+      }
+    }
+  }
+
+}

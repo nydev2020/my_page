@@ -11,9 +11,10 @@
     .showBlog__content__page
       - if @blog.previous.present?
         = link_to '前へ', admin_blog_path(@blog.previous), class: 'page__back'
-      = link_to 'TOPへ戻る', root_path, class: 'page__home'
+      = link_to '一覧へ戻る', admin_blogs_path, class: 'index__page'
+      = link_to 'TOPへ戻る', root_path, class: 'home__page'
       - if @blog.next.present?
-        = link_to '', admin_blog_path(@blog.next), class: 'page__next'
+        = link_to '次へ', admin_blog_path(@blog.next), class: 'page__next'
 
     .showBlog__content__change
       - if current_user.admin?
