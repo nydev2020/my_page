@@ -1,4 +1,5 @@
 class Admin::BlogsController < ApplicationController
+  before_action :authenticate_user!
   
   def new
     @blog = Blog.new
@@ -21,8 +22,8 @@ class Admin::BlogsController < ApplicationController
   end
 
   def update
-    blig = Blog.find(params[:id])
-    if blog.update{blog_params}
+    blog = Blog.find(params[:id])
+    if blog.update(blog_params)
       redirect_to root_path
     else
       redirect_to action: :edit

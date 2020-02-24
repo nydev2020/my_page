@@ -7,7 +7,7 @@
 
 = link_to '戻る', root_path
 
-- if current_user.admin? && (current_user == user)
+- if current_user.admin?
   .showBlog__edit
   = link_to '編集', edit_admin_blog_path{blog.id}
   .showBlog__destroy
