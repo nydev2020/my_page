@@ -1,0 +1,54 @@
+.blogContent {
+  padding: 40px 200px;
+  .blog_title{
+    font-size: 28px;
+    text-align: center;
+    // padding: 20px 200px;
+  }
+  &__form {
+    // padding: 20px 200px;
+    
+    &__title {
+      text-align: center;
+      
+      &__field {
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        display: block;
+        padding: 10px;
+        margin: 10px auto;
+        width: 80%;
+      }
+    }
+    &__text {
+      text-align: center;
+      
+      &__area {
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        display: block;
+        padding: 10px;
+        margin: 10px auto;
+        width: 80%;
+        height: 250px;
+      } 
+    }
+    &__submit {
+      height: 100px;
+      margin: auto;
+      text-align: center;
+      line-height: 100px;
+      .submit__btn {
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        padding: 15px 150px;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+      }
+    }
+  }
+}

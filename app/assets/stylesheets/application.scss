@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+@import 'reset';
+@import 'admin/blogs_form';
+@import 'admin/blog_show';

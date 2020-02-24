@@ -1,12 +1,18 @@
-.blog
-= form_with(model: [:admin, @blog]) do |f|
-  .blog__form
-    .blig__form__title
-    = f.label :タイトル
-    = f.text_field :title, placeholder: 'タイトル'
-    .blog__form__text
-    = f.label :ブログ本文
-    = f.text_area :text, placeholder: 'blog本文'
-    .blog_form__submit
-    = f.submit '投稿'
-    
+.header
+  部分テンプレート
+.blogContent
+  %h1.blog_title ブログ投稿画面
+
+  .blogContent__form
+  = form_with(model: [:admin, @blog]) do |f|
+    .blogContent__form__title
+      = f.label :タイトル , class: 'label'
+      = f.text_field :title, placeholder: 'タイトル', class: 'blogContent__form__title__field'
+    .blogContent__form__text
+      = f.label :ブログ本文 , class: 'label'
+      = f.text_area :text, placeholder: 'blog本文', class: 'blogContent__form__text__area'
+    .blogContent__form__submit
+      = f.submit '投稿', class: 'submit__btn'
+
+.footer
+  部分テンプレート
