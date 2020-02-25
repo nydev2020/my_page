@@ -1,6 +1,6 @@
 .homeContent
-  
   .homeContent__left
+    = current_user.username
     .homeContent__left__head 最新の投稿
     - @blog[0..6].each do |blog|
       .blogBox

@@ -1,9 +1,10 @@
 .homeContent {
   display: flex;
   justify-content: space-between;
-  padding: 100px 10px 0 100px;
+  padding-left: 100px;
 
   &__left {
+    padding-top: 100px;
     width: 40%;
     &__head {
       font-size: 22px;
@@ -36,6 +37,7 @@
     }
   }
   &__center {
+    padding: 100px 20px 0 20px;
     width: 60%;
     &__head {
       font-size: 22px;
@@ -48,43 +50,6 @@
     &__foot {
       margin-top: 10px;
       text-align: end;
-    }
-  }
-
-  &__right {
-    .nav__edit {
-      height: 100vh;
-      margin: 0 120px 0 30px;
-      li {
-        margin-bottom: 20px;
-      }
-      .home__page {
-        text-decoration: none;
-      }
-      .blog__page {
-        text-decoration: none;
-      }
-      .gallery__page {
-        text-decoration: none;
-      }
-      .shop__page {
-        text-decoration: none;
-      }
-      .admin__page {
-        text-decoration: none;
-      }
-      .write__blog {
-        text-decoration: none;
-        
-      }
-      .my__page {
-        text-decoration: none;
-        
-      }
-      .log__out {
-        text-decoration: none;
-        
-      }
     }
   }
 

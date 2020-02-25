@@ -5,8 +5,11 @@ class Admin::GalleriesController < ApplicationController
   end
 
   def create
-    Gallery.create(gallery_params)
-    redirect_to root_path
+    if Gallery.create(gallery_params)
+      redirect_to root_path
+    else
+      redirect_to action: :new
+    end
   end
 
   def show
@@ -19,8 +22,11 @@ class Admin::GalleriesController < ApplicationController
 
   def update
     gallery = Gallery.find(params[:id])
-    gallery.update(gallery_params)
-    redirect_to action: :edit
+    if gallery.update(gallery_params)
+      redirect_to root_path
+    else
+      redirect_to action: :edit
+    end
   end
 
   private
