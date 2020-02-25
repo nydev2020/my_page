@@ -1,26 +1,31 @@
-.showBlog
-  .showBlog__content
-    .showBlog__content__title
-      タイトル
-    .showBlog__content__title
-      = @blog.title
+.homeContent
+  .showBlog
+    .showBlog__content
+      .showBlog__content__title
+        タイトル
+      .showBlog__content__title
+        = @blog.title
+      
+      .showBlog__content__text
+        = @blog.text
+
+      .showBlog__content__page
+        - if @blog.previous.present?
+          = link_to '前へ', admin_blog_path(@blog.previous), class: 'page__back'
+        = link_to '一覧へ戻る', admin_blogs_path, class: 'index__page'
+        = link_to 'TOPへ戻る', root_path, class: 'home__page'
+        - if @blog.next.present?
+          = link_to '次へ', admin_blog_path(@blog.next), class: 'page__next'
+
+      .showBlog__content__change
+        - if current_user.admin?
+          .showBlog__content__change__edit
+          = link_to '編集', edit_admin_blog_path{blog.id}
+          .showBlog__content__change__destroy
+          = link_to '削除', admin_blog_path, method: :delete
     
-    .showBlog__content__text
-      = @blog.text
-
-    .showBlog__content__page
-      - if @blog.previous.present?
-        = link_to '前へ', admin_blog_path(@blog.previous), class: 'page__back'
-      = link_to '一覧へ戻る', admin_blogs_path, class: 'index__page'
-      = link_to 'TOPへ戻る', root_path, class: 'home__page'
-      - if @blog.next.present?
-        = link_to '次へ', admin_blog_path(@blog.next), class: 'page__next'
-
-    .showBlog__content__change
-      - if current_user.admin?
-        .showBlog__content__change__edit
-        = link_to '編集', edit_admin_blog_path{blog.id}
-        .showBlog__content__change__destroy
-        = link_to '削除', admin_blog_path, method: :delete
+  .homeContent__right
+    = render "layouts/homeContent__right"
+    
   
-  .blogShow__comment
+.blogShow__comment

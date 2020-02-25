@@ -5,19 +5,7 @@
         .galleryShow__box__title
           = @gallery.title
         .galleryShow__box__image
-          = image_tag @gallery.image, width: "800px"
-
+          = image_tag @gallery.image, width: "700px"
 
   .homeContent__right
-    %ul.nav__edit
-      %li= link_to 'HOME', root_path , class: 'home__page'
-      %li= link_to 'BLOG', new_admin_blog_path, class: 'blog__page'
-      %li= link_to 'GALLERY', new_admin_gallery_path, class: 'gallery__page'
-      %li= link_to 'SHOP', '#', class: 'shop__page'
-      - if current_user.admin?
-        %li= link_to 'ADMIN', user_path(current_user), class: 'admin__page'
-        %li= link_to 'BLOG', new_admin_blog_path, class: 'write__blog'
-      - else
-        %li= link_to 'MYPAGE', user_path(current_user.id), class: 'my__page'
-
-      %li= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: 'log__out'
+    = render "layouts/homeContent__right"
