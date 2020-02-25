@@ -3,7 +3,6 @@ class CreateGalleries < ActiveRecord::Migration[5.2]
     create_table :galleries do |t|
       t.string :title, null: false
       t.text   :text,  null: false
-      t.string :gallery, null: false
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end
