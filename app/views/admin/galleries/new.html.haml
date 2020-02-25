@@ -1,0 +1,22 @@
+.header
+  部分テンプレート
+.galleryContent
+  %h1.gallery_title ブログ投稿画面
+
+  .galleryContent__form
+  = form_with(model: [:admin, @gallery]) do |f|
+    .galleryContent__form__title
+      = f.label :タイトル , class: 'label'
+      = f.text_field :title, placeholder: 'タイトル', class: 'galleryContent__form__title__field'
+    .galleryContent__form__text
+      = f.label :ブログ本文 , class: 'label'
+      = f.text_area :text, placeholder: 'テキスト', class: 'galleryContent__form__text__area'
+    .galleryContent__form__gallery
+      = f.label :gallery , class: 'label'
+      = f.file_field :gallery, class: 'galleryContent__form__text__area'
+
+    .galleryContent__form__submit
+      = f.submit '投稿', class: 'submit__btn'
+
+.footer
+  部分テンプレート
