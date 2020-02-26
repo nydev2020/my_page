@@ -3,7 +3,7 @@ class Admin::GalleriesController < ApplicationController
 
   def index
     @images = ActiveStorage::Attachment.all.pluck(:record_id)
-    @gallery = Gallery.where(id: @images)
+    @gallery = Gallery.where(id: @images).order("created_at DESC")
   end
 
   def new

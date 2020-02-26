@@ -1,7 +1,7 @@
 class Admin::BlogsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @blog = Blog.all.page(params[:page]).per(9)
+    @blog = Blog.all.order("created_at DESC").page(params[:page]).per(9)
   end
 
   def new
@@ -10,7 +10,7 @@ class Admin::BlogsController < ApplicationController
 
   def create
     if Blog.create(blog_params)
-      redirect_to root_path
+      redirect_to action: :index
     else
       redirect_to action: :new
     end
@@ -36,7 +36,7 @@ class Admin::BlogsController < ApplicationController
   def destroy
     blog = Blog.find(params[:id])
     if blog.destroy
-      redirect_to root_path
+      redirect_to action: :index
     else
       redirect_to action: :edit
     end

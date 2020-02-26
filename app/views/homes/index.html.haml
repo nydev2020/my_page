@@ -21,10 +21,10 @@
   .homeContent__center
     .homeContent__center__head NEW GALLERY
     .galleryBox
-      .galeryBox__content
-      - @gallery[0..7].each do |gallery|
+      -# .galeryBox__content
+      - @gallery[0..8].each do |gallery|
         .galleryBox__content__image
-          = link_to (image_tag gallery.image.variant(combine_options:{resize:"200x200^",crop:"190x190+0+0",gravity: :center}).processed), admin_gallery_path(gallery.id)
+          = link_to (image_tag gallery.image.variant(combine_options:{resize:"180x180^",crop:"180x180+0+0",gravity: :center}).processed), admin_gallery_path(gallery.id)
           .galleryBox__content__image__title
             = gallery.title
 
