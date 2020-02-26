@@ -1,34 +1,32 @@
 .homeContent
+  = current_user.username
   .homeContent__left
-    = current_user.username
-    .homeContent__left__head 最新の投稿
-    - @blog[0..6].each do |blog|
+    .homeContent__left__head NEW
+    - @blog[0..9].each do |blog|
       .blogBox
         .blogBox__content
           .blogBox__content__title
-            Title
+            TITLE
             = link_to "#{blog.title}", admin_blog_path(blog.id), class: 'blog__page'
           .blogBox__content__createtime
-            Created At
+            DATE
             = blog.created_at
+    
     .homeContent__left__foot
       = link_to 'ALL', admin_blogs_path, class: 'blog__all'
 
-
   .homeContent__center
-    .homeContent__center__head 最新の投稿
-    -# - @blog[0..6].each do |blog|
-      .galleryBox
-        .galeryBox__content
-          .galleryBox__content__title
-            Title
-            = link_to "#{blog.title}", admin_blog_path(blog.id), class: 'blog__page'
-          .galleryBox__content__createtime
-            Created At
-            = blog.created_at
-    .homeContent__center__foot
-      = link_to 'ALL', '#', class: 'gallery__all'
+    .homeContent__center__head NEW
+    .galleryBox
+      .galeryBox__content
+      - @gallery[0..7].each do |gallery|
+        .galleryBox__content__image
+          = link_to (image_tag gallery.image.variant(combine_options:{resize:"200x200^",crop:"190x190+0+0",gravity: :center}).processed), admin_gallery_path(gallery.id)
+          .galleryBox__content__image__title
+            = gallery.title
 
+    .homeContent__center__foot
+      = link_to 'ALL', admin_galleries_path, class: 'gallery__all'
 
   .homeContent__right
     = render "layouts/homeContent__right"

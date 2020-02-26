@@ -1,5 +1,11 @@
 class Admin::GalleriesController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    @images = ActiveStorage::Attachment.all.pluck(:record_id)
+    @gallery = Gallery.where(id: @images)
+  end
+
   def new
     @gallery = Gallery.new
   end

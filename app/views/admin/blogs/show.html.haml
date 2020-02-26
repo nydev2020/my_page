@@ -1,12 +1,12 @@
 .homeContent
-  .showBlog
-    .showBlog__title
+  .blogShow
+    .blogShow__title
       タイトル
-    .showBlog__title
+    .blogShow__title
       = @blog.title
-    .showBlog__text
+    .blogShow__text
       = @blog.text
-    .showBlog__page
+    .blogShow__page
       - if @blog.previous.present?
         = link_to '前へ', admin_blog_path(@blog.previous), class: 'page__back'
       = link_to '一覧へ戻る', admin_blogs_path, class: 'index__page'
@@ -14,11 +14,11 @@
       - if @blog.next.present?
         = link_to '次へ', admin_blog_path(@blog.next), class: 'page__next'
 
-    .showBlog__change
+    .blogShow__change
       - if current_user.admin?
-        .showBlog__change__edit
+        .blogShow__change__edit
         = link_to '編集', edit_admin_blog_path{blog.id}
-        .showBlog__change__destroy
+        .blogShow__change__destroy
         = link_to '削除', admin_blog_path, method: :delete
     
   .homeContent__right

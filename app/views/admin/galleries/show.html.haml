@@ -12,8 +12,9 @@
           = link_to 'PREV', admin_gallery_path(@gallery.previous_gallery), class: 'page__back'
         - if @gallery.next_gallery.present?
           = link_to 'NEXT', admin_gallery_path(@gallery.next_gallery), class: 'page__next'
+      
       .galleryShow__agg
-        = link_to 'INDEX', admin_galleries_path, class: 'index__page'
+        = link_to 'ALL', admin_galleries_path, class: 'index__page'
         = link_to 'TOP', root_path, class: 'home__page'
       
       .galleryShow__text

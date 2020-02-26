@@ -1,17 +1,17 @@
 .homeContent
-  .indexBlog
-    .indexBlog__main
-      .indexBlog__main__top
+  .blogIndex
+    .blogIndex__main
+      .blogIndex__main__top
         %h1 BLOG LIST
-      .indexBlog__main__middle
+      .blogIndex__main__middle
         - @blog.each do |blog|
-          .indexBlog__main__middle__title Title
+          .blogIndex__main__middle__title Title
           = link_to "#{blog.title}", admin_blog_path(blog.id)
-          .indexBlog__main__middle__created_at Date
+          .blogIndex__main__middle__created_at Date
           = blog.created_at
-      .indexBlog__main__bottom
+      .blogIndex__main__bottom
         = paginate(@blog)
-      .indexBlog__main__bottom__top
+      .blogIndex__main__bottom__top
         = link_to 'TOP', root_path
   
   .homeContent__right
