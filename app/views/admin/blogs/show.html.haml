@@ -1,25 +1,25 @@
 .homeContent
   .blogShow
     .blogShow__title
-      タイトル
+      TITLE
     .blogShow__title
       = @blog.title
     .blogShow__text
       = @blog.text
     .blogShow__page
       - if @blog.previous.present?
-        = link_to '前へ', admin_blog_path(@blog.previous), class: 'page__back'
-      = link_to '一覧へ戻る', admin_blogs_path, class: 'index__page'
-      = link_to 'TOPへ戻る', root_path, class: 'home__page'
+        = link_to 'PREV', admin_blog_path(@blog.previous), class: 'page__back'
+      = link_to 'LIST', admin_blogs_path, class: 'index__page'
+      = link_to 'TOP', root_path, class: 'home__page'
       - if @blog.next.present?
-        = link_to '次へ', admin_blog_path(@blog.next), class: 'page__next'
+        = link_to 'NEXT', admin_blog_path(@blog.next), class: 'page__next'
 
     .blogShow__change
       - if current_user.admin?
         .blogShow__change__edit
-        = link_to '編集', edit_admin_blog_path{blog.id}
+        = link_to 'EDIT', edit_admin_blog_path{blog.id}
         .blogShow__change__destroy
-        = link_to '削除', admin_blog_path, method: :delete
+        = link_to 'DELETE', admin_blog_path, method: :delete
     
   .homeContent__right
     = render "layouts/homeContent__right"

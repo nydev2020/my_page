@@ -1,13 +1,16 @@
 .homeContent
   = current_user.username
   .homeContent__left
-    .homeContent__left__head NEW
+    .homeContent__left__head NEW BLOG
     - @blog[0..9].each do |blog|
       .blogBox
         .blogBox__content
+          =link_to "", admin_blog_path(blog.id), class: 'blog__page'
           .blogBox__content__title
-            TITLE
-            = link_to "#{blog.title}", admin_blog_path(blog.id), class: 'blog__page'
+            Title:
+            %sp.blogBox__content__title
+            = blog.title
+            -# = link_to "#{blog.title}", admin_blog_path(blog.id), class: 'blog__page'
           .blogBox__content__createtime
             DATE
             = blog.created_at
@@ -16,7 +19,7 @@
       = link_to 'ALL', admin_blogs_path, class: 'blog__all'
 
   .homeContent__center
-    .homeContent__center__head NEW
+    .homeContent__center__head NEW GALLERY
     .galleryBox
       .galeryBox__content
       - @gallery[0..7].each do |gallery|

@@ -2,13 +2,23 @@
   .blogIndex
     .blogIndex__main
       .blogIndex__main__top
-        %h1 BLOG LIST
+        BLOG
       .blogIndex__main__middle
         - @blog.each do |blog|
-          .blogIndex__main__middle__title Title
-          = link_to "#{blog.title}", admin_blog_path(blog.id)
-          .blogIndex__main__middle__created_at Date
-          = blog.created_at
+          .blogIndex__box
+            .blogIndex__box__title
+              Title
+              = link_to "#{blog.title}", admin_blog_path(blog.id), class: "blog__page"
+              .blogIndex__box__createtime
+                = blog.created_at
+            .blogIndex__box__change
+            - if current_user.admin?
+              = link_to 'EDIT', edit_admin_blog_path(blog.id), class: 'edit__page'
+            -# .blogIndex__change__destroy
+            -#   = link_to 'DELETE', admin_blog_path, method: :delete
+
+
+
       .blogIndex__main__bottom
         = paginate(@blog)
       .blogIndex__main__bottom__top
