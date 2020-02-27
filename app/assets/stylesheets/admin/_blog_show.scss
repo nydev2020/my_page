@@ -17,30 +17,42 @@
   }
   &__page {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     margin: 20px 0;
     .page__back {
+      margin-left: 10px;
       text-decoration: none;
+      color: #eee;
     }
     .index__page {
+      margin-left: 10px;
       text-decoration: none;
+      color: #eee;
     }
     .home__page{
+      margin-left: 10px;
       text-decoration: none;
+      color: #eee;
     }
-    _.page__next {
+    .page__next {
+      margin-left: 10px;
       text-decoration: none;
+      color: #eee;
     }
   }
   &__change {
     display: flex;
     justify-content: flex-end;
     &__edit {
-      
+      .edit__page {
+        color: #eee;
+      }
     }
     &__destroy {
       margin-left: 10px;
-
+      .delete__page {
+        color: #eee;
+      }
     }
   }
 }

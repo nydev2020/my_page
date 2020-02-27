@@ -23,9 +23,9 @@
       .galleryShow__change
         - if current_user.admin?
           .galleryShow__change__edit
-            = link_to 'EDIT', edit_admin_gallery_path{blog.id}
+            = link_to 'EDIT', edit_admin_gallery_path{blog.id}, class: 'edit__page'
           .galleryShow__change__destroy
-            = link_to 'DELETE', admin_gallery_path, method: :delete
+            = link_to 'DELETE', admin_gallery_path, method: :delete, class: 'delete__page'
         
   .homeContent__right
     = render "layouts/homeContent__right"

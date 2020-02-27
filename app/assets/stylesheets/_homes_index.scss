@@ -44,7 +44,7 @@
       letter-spacing: 1px;
     }
     &__foot {
-      margin-top: 55px;
+      margin-top: 30px;
       text-align: end;
     }
   }
@@ -58,8 +58,9 @@
     .galleryBox {
       padding-left: 20px;
       display: grid;
-      grid-template-rows: 190px 190px 190px ;
-      grid-template-columns: 190px 190px 190px;
+      grid-gap: 10px;
+      grid-template-rows: 180px 180px 180px ;
+      grid-template-columns: 180px 180px 180px;
       &__image {
         position: relative;
         &__file {
