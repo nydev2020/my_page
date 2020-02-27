@@ -1,0 +1,46 @@
+.homeContent__right {
+  padding: 100px 50px 0 30px;
+  box-sizing: border-box;
+  background-color: rgb(206, 3, 3);
+  .nav__edit {
+    height: 100vh;
+    li {
+      font-size: 20px;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+    .home__page {
+      color: #eee;
+      text-decoration: none;
+    }
+    .blog__page {
+      color: #eee;
+      text-decoration: none;
+    }
+    .gallery__page {
+      color: #eee;
+      text-decoration: none;
+    }
+    .shop__page {
+      color: #eee;
+      text-decoration: none;
+    }
+    .admin__page {
+      color: #eee;
+      text-decoration: none;
+    }
+    .write__blog {
+      color: #eee;
+      text-decoration: none;
+    }
+    .my__page {
+      color: #eee;
+      text-decoration: none;
+    }
+    .log__out {
+      color: #eee;
+      text-decoration: none;
+      
+    }
+  }
+}

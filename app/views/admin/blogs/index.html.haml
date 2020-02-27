@@ -1,0 +1,30 @@
+.homeContent
+  .blogIndex
+    .blogIndex__main
+      .blogIndex__main__top
+        BLOG
+      .blogIndex__main__middle
+        - @blog.each do |blog|
+          .blogIndex__box
+            =link_to "", admin_blog_path(blog.id), class: 'blog__page'
+            .blogIndex__box__title
+              Title
+              = blog.title
+              
+              .blogIndex__box__createtime
+                = blog.created_at
+            - if current_user.admin?
+              .blogIndex__box__choose
+                .blogIndex__box__choose__edit
+                  = link_to 'EDIT', edit_admin_blog_path(blog.id), class: 'edit__page'
+                .blogIndex__box__choose__destroy
+                  = link_to 'DELETE', admin_blog_path(blog.id), method: :delete, class: 'delete__page'
+
+      .blogIndex__main__bottom
+        = paginate(@blog)
+      -# .blogIndex__main__bottom__top
+      -#   = link_to 'TOP', root_path
+  
+  .homeContent__right
+    = render "layouts/homeContent__right"
+    

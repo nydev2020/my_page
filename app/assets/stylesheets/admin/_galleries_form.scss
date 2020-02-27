@@ -1,0 +1,70 @@
+.galleryContent {
+  width: 100%;
+  padding: 80px 100px 20px 0;
+  .gallery_title{
+    font-size: 28px;
+    font-weight: 900;
+    text-align: center;
+  }
+  &__form {
+    &__title {
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: 3px;
+      &__field {
+        font-size: 18px;
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        display: block;
+        padding: 10px;
+        margin: 10px auto;
+        width: 80%;
+      }
+    }
+    &__text {
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: 3px;
+      &__area {
+        font-size: 18px;
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        display: block;
+        padding: 10px;
+        margin: 10px auto;
+        width: 80%;
+        height: 150px;
+      } 
+    }
+    &__file {
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: 3px;
+      &__field {
+        font-size: 18px;
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        display: block;
+        padding: 10px;
+        margin: 10px auto;
+        width: 80%; 
+      }
+    }
+    &__submit {
+      margin: auto;
+      text-align: center;
+      margin-top: 30px;
+      line-height: 80px;
+      .submit__btn {
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        padding: 0 150px;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(26, 26, 26);
+        cursor: pointer;
+      }
+    }
+  }
+}

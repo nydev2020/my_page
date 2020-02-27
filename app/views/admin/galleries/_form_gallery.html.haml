@@ -1,0 +1,16 @@
+.gallery_title
+  GALLERY
+.galleryContent__form
+= form_with(model: [:admin, @gallery]) do |f|
+  .galleryContent__form__title
+    = f.label :TITLE , class: 'label'
+    = f.text_field :title, placeholder: 'TITLE', class: 'galleryContent__form__title__field'
+  .galleryContent__form__text
+    = f.label :COMMENT , class: 'label'
+    = f.text_area :text, placeholder: 'COMMENT', class: 'galleryContent__form__text__area'
+  .galleryContent__form__file
+    = f.label :GALLERY , class: 'label'
+    = f.file_field :image, class: 'galleryContent__form__file__field'
+
+  .galleryContent__form__submit
+    = f.submit 'SUBMIT', class: 'submit__btn'

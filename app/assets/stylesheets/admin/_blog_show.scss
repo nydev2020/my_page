@@ -1,0 +1,106 @@
+
+.blogShow {
+  width: 100%;
+  padding: 100px 100px 0 100px;
+  
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  &__text {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 20px;
+  }
+  &__page {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    .page__back {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #eee;
+    }
+    .index__page {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #eee;
+    }
+    .home__page{
+      margin-left: 10px;
+      text-decoration: none;
+      color: #eee;
+    }
+    .page__next {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #eee;
+    }
+  }
+  &__change {
+    display: flex;
+    justify-content: flex-end;
+    &__edit {
+      .edit__page {
+        color: #eee;
+      }
+    }
+    &__destroy {
+      margin-left: 10px;
+      .delete__page {
+        color: #eee;
+      }
+    }
+  }
+  .commentContent {
+    padding: 30px;
+    &__title {
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+    &__form {
+      // font-size: 18px;
+      // border: solid 1px #ccc;
+      // border-radius: 5px;
+      // display: block;
+      // padding: 10px;
+      // margin: 10px auto;
+      // width: 80%;
+      &__comment {
+        text-align: center;
+        font-size: 28px;
+        letter-spacing: 3px;
+        &__field {
+          font-size: 18px;
+          border: solid 1px #ccc;
+          border-radius: 5px;
+          display: block;
+          padding: 10px;
+          margin: 10px auto;
+          width: 80%;
+          letter-spacing: 2px;
+        } 
+      }
+      &__submit {
+        margin: auto;
+        text-align: center;
+        margin-top: 30px;
+        line-height: 80px;
+        .submit__btn {
+          border: solid 1px #ccc;
+          border-radius: 5px;
+          padding: 0 150px;
+          font-family: Arial, sans-serif;
+          font-size: 18px;
+          font-weight: bold;
+          color: rgb(26, 26, 26);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

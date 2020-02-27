@@ -1,0 +1,41 @@
+.homeContent
+  .blogShow
+    .blogShow__title
+      TITLE
+    .blogShow__title
+      = @blog.title
+    .blogShow__text
+      = simple_format @blog.text
+      
+    .blogShow__page
+      - if @blog.previous.present?
+        = link_to 'PREV', admin_blog_path(@blog.previous), class: 'page__back'
+      - if @blog.next.present?
+        = link_to 'NEXT', admin_blog_path(@blog.next), class: 'page__next'
+    .blogShow__page
+      = link_to 'LIST', admin_blogs_path, class: 'index__page'
+      = link_to 'TOP', root_path, class: 'home__page'
+
+    .blogShow__change
+      - if current_user.admin?
+        .blogShow__change__edit
+          = link_to 'EDIT', edit_admin_blog_path{blog.id}, class: 'edit__page'
+        .blogShow__change__destroy
+          = link_to 'DELETE', admin_blog_path, method: :delete, class: 'delete__page'
+    
+    -# .commentContent
+    -# - if @comments
+    -#   .commentContent__title
+    -#     COMMENT
+    -#   .commentContent__area
+    -#   -@comments.each do |comments|
+    -#     = comments.comment
+    -#     = comments.username
+    -#   .commentContent__form
+    -#   = form_with(model: [:admin, @blog, @comment], url: admin_blog_comments_path{:blog_id}) do |f|
+    -#     .commentContent__form__comment
+    -#       = f.text_field :comment, placeholder: 'COMMENT', class: 'commentContent__form__comment__field'
+    -#     .commentContent__form__submit
+    -#       = f.submit 'SEND', class: 'submit__btn'
+  .homeContent__right
+    = render "layouts/homeContent__right"
