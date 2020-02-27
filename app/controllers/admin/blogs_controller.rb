@@ -18,6 +18,8 @@ class Admin::BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    @comment = Comment.new
+    @comments = @blog.comments.includes(:user)
   end
 
   def edit
