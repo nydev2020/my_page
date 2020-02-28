@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: my_page_production
-  username: my_page
-  password: <%= ENV['MY_PAGE_DATABASE_PASSWORD'] %>
+  sername: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
