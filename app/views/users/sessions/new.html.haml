@@ -1,0 +1,25 @@
+.userform
+  .signup
+    .signup__head
+      Log In
+    .signup__form
+    = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
+      
+      -# .field
+      -#   = f.label :username, class: 'form__label'
+      -#   %br/
+      -#   = f.text_field :username, autofocus: true , maxlength: "10", class: 'form__username'
+      .field
+        = f.label :email, class: 'form__label'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form__email'
+      .field
+        = f.label :password, class: 'form__label'
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class: 'form__password'
+      .field
+        = f.submit "Log In", class: 'form__submit'
+      
+    .signup__link
+      = render "users/shared/links",class: 'form__link'
+      
