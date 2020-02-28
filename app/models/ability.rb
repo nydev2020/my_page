@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class Ability
-  include CanCan::Ability
+# class Ability
+#   include CanCan::Ability
 
   # Define abilities for the passed in user here. For example:
   #
@@ -30,5 +30,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
-end
+#   end
+# end
