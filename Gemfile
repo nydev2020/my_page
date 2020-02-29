@@ -74,7 +74,7 @@ gem 'devise'
 gem 'pry-rails'
 gem 'kaminari'
 gem 'mini_magick'
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
 gem 'aws-sdk'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
