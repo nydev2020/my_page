@@ -8,8 +8,9 @@
       
       .field
         = f.label :adminuser, class: 'form__label'
+        %em (本来この選択肢はありません)
         %br/
-        = f.check_box :admin, class: 'form__admin'
+        = f.check_box(:admin, {},checked: "true", unchecked: "false")
       .field
         = f.label :username, class: 'form__label'
         %em (10字以内)
