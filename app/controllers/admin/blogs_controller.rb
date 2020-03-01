@@ -10,9 +10,9 @@ class Admin::BlogsController < ApplicationController
 
   def create
     if Blog.create(blog_params)
-      redirect_to action: :index
+      redirect_to admin_blogs_path
     else
-      redirect_to action: :new
+      redirect_to root_path
     end
   end
 
@@ -29,7 +29,7 @@ class Admin::BlogsController < ApplicationController
   def update
     blog = Blog.find(params[:id])
     if blog.update(blog_params)
-      redirect_to root_path
+      redirect_to admin_blogs_path
     else
       redirect_to action: :edit
     end
@@ -38,7 +38,7 @@ class Admin::BlogsController < ApplicationController
   def destroy
     blog = Blog.find(params[:id])
     if blog.destroy
-      redirect_to action: :index
+      redirect_to admin_blogs_path
     else
       redirect_to action: :edit
     end

@@ -1,32 +1,32 @@
 .userform
   .signup
     = devise_error_messages!
-    .signup__head
-      Sign Up
-    .signup__form
-    = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
-      
-      .field
-        = f.label :adminuser, class: 'form__label'
-        %em (本来この選択肢はありません)
-        %br/
-        = f.check_box(:admin, {},checked: "true", unchecked: "false")
-      .field
-        = f.label :username, class: 'form__label'
-        %em (10字以内)
-        %br/
-        = f.text_field :username, autofocus: true , maxlength: "10", class: 'form__username'
-      .field
-        = f.label :email, class: 'form__label'
-        %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form__email'
-      .field
-        = f.label :password, class: 'form__label'
-        %em (8文字以上)
-        %br/
-        = f.password_field :password, autocomplete: "current-password", class: 'form__password'
-      .field
-        = f.submit "Sign Up", class: 'form__submit'
-      
-    .signup__link
-      = render "users/shared/links",class: 'form__link'
+  .userform__head
+    Sign Up
+  .userform__form
+  = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+    
+    .field
+      = f.label :adminuser, class: 'form__label'
+      %em (本来この選択肢はありません)
+      %br/
+      = f.check_box(:admin, {},checked: "true", unchecked: "false")
+    .field
+      = f.label :username, class: 'form__label'
+      %em (10字以内)
+      %br/
+      = f.text_field :username, autofocus: true , maxlength: "10", class: 'form__username'
+    .field
+      = f.label :email, class: 'form__label'
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form__email'
+    .field
+      = f.label :password, class: 'form__label'
+      %em (6文字以上)
+      %br/
+      = f.password_field :password, autocomplete: "current-password", class: 'form__password'
+    .field
+      = f.submit "Sign Up", class: 'form__submit'
+    
+  .userform__link
+    = render "users/shared/links",class: 'form__link'
