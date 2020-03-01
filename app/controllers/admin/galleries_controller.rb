@@ -14,7 +14,7 @@ class Admin::GalleriesController < ApplicationController
     if Gallery.create(gallery_params)
       redirect_to admin_galleries_path
     else
-      redirect_to action: :new
+      redirect_to admin_galleries_path
     end
   end
 
@@ -31,7 +31,7 @@ class Admin::GalleriesController < ApplicationController
     if gallery.update(gallery_params)
       redirect_to admin_galleries_path
     else
-      redirect_to action: :edit
+      redirect_to admin_galleries_path
     end
   end
 

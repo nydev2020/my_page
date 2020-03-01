@@ -40,7 +40,7 @@ class Admin::BlogsController < ApplicationController
     if blog.destroy
       redirect_to admin_blogs_path
     else
-      redirect_to action: :edit
+      redirect_to admin_blogs_path
     end
   end
 

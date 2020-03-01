@@ -4,7 +4,7 @@ class Gallery < ApplicationRecord
   validates :title, presence: true
   validates :text,  presence: true
 
-  validate :image_presence
+  validates :image_presence
 
   def image_presence
     if image.attached?
