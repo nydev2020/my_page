@@ -29,7 +29,7 @@ class Admin::GalleriesController < ApplicationController
   def update
     gallery = Gallery.find(params[:id])
     if gallery.update(gallery_params)
-      redirect_to admin_galleries
+      redirect_to admin_galleries_path
     else
       redirect_to action: :edit
     end
