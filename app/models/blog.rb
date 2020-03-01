@@ -1,8 +1,8 @@
 class Blog < ApplicationRecord
   belongs_to :user
   has_many :comments
-  validates :title, :text, presence: true
-
+  validates :title, presence: true
+  validates :text,  presence: true
 
   def previous
     Blog.where("id<?",self.id).order("id DESC").first    
