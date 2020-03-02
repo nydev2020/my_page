@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
     resources :blogs do
-      resources :comments,  only: [:create]
+      # post 'comments', on: :member
+      resources :comments, only: :create
     end
     resources :galleries
   end
