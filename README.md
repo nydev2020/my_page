@@ -25,5 +25,5 @@ MY_PAGE
   - userpage 機能
   - コメント機能
 
-## デモhttps://github.com/yoshinori-nishinaka/my_page/blob/master/public/demo.gif
+## デモ
 ![](https://github.com/yoshinori-nishinaka/my_page/blob/master/public/demo.gif)
