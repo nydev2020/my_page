@@ -5,6 +5,6 @@ class HomesController < ApplicationController
     @blog = Blog.all.order("created_at DESC")
     
     @images = ActiveStorage::Attachment.order("created_at DESC").limit(9).pluck(:record_id)
-    @gallery = Gallery.where(id: @images)
+    @gallery = Gallery.where(id: @images).order("created_at DESC")
   end
 end

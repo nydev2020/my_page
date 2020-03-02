@@ -16,10 +16,19 @@ class Admin::BlogsController < ApplicationController
     end
   end
 
+  def comments
+    @comment = Comment.new
+    if Comment.create(comment_params)
+      redirect_to admin_blog_path(blog.id)
+    else
+      redirect_to root_path
+    end
+  end
+
   def show
     @blog = Blog.find(params[:id])
-    @comment = Comment.new
     @comments = @blog.comments.includes(:user)
+    @comment = Comment.new
   end
 
   def edit
@@ -47,5 +56,9 @@ class Admin::BlogsController < ApplicationController
   private
   def blog_params
     params.require(:blog).permit(:title, :text).merge(user_id: current_user.id)
+  end
+
+  def comment_params
+    params.require(:comments).permit(:comment).merge(user_id: current_user.id, blog_id: params[:blog_id])
   end
 end

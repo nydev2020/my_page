@@ -32,7 +32,9 @@
     -#     = comments.comment
     -#     = comments.username
     -#   .commentContent__form
-    -#   = form_with(model: [:admin, @blog, @comment], url: admin_blog_comments_path{:blog_id}) do |f|
+    -#   -# = form_with(model: [:admin, @blog, @comment], url: comments_admin_blog_path{:blog_id}) do |f|
+
+    -#   = form_with model: [@blog,@comment], url: {controller: 'admin/comments', action: 'create' }, local: true do |f|
     -#     .commentContent__form__comment
     -#       = f.text_field :comment, placeholder: 'COMMENT', class: 'commentContent__form__comment__field'
     -#     .commentContent__form__submit

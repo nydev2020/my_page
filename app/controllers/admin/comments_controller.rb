@@ -1,7 +1,7 @@
-class CommentsController < ApplicationController
+class Admin::CommentsController < ApplicationController
   # def create
-  #   binding.pry
-  #   if Comment.create(comment_params)
+  #   @comment = Comment.new(comment_params)
+  #   if @comment.save
   #     redirect_to admin_blog_path(blog.id)
   #   else
   #     redirect_to root_path
