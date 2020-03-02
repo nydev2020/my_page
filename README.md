@@ -3,6 +3,10 @@
 # アプリ名
 MY_PAGE
 
+## デモ
+![](https://github.com/yoshinori-nishinaka/my_page/blob/master/public/demo.gif)
+![](https://github.com/yoshinori-nishinaka/my_page/blob/master/public/demo1.gif)
+
 # 目的
 - 個人や学校のHPを作成するという設定で製作しました。
 - 1対多のコミュニケーションの場を作りたい。
@@ -24,6 +28,3 @@ MY_PAGE
   - SHOP 機能
   - userpage 機能
   - コメント機能
-
-## デモ
-![](https://github.com/yoshinori-nishinaka/my_page/blob/master/public/demo.gif)
