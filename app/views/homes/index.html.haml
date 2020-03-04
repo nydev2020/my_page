@@ -1,42 +1,43 @@
 .homeContent
   .homeContent__left
-    .homeContent__left__head NEW BLOG
-    - @blog[0..7].each do |blog|
-      .blogBox
-        .blogBox__content
-          =link_to "", admin_blog_path(blog.id), class: 'blog__page' 
-          .blogBox__content__new
-          - if blog.created_at > @yesterday
-            .blogBox__content__new
-              new!!
-          .blogBox__content__title
-            Title:
-            %sp.blogBox__content__title
-            = blog.title
-            -# = link_to "#{blog.title}", admin_blog_path(blog.id), class: 'blog__page'
-          .blogBox__content__createtime
-            DATE
-            = blog.created_at
-    
-    .homeContent__left__foot
-      = link_to 'ALL', admin_blogs_path, class: 'blog__all'
+    .homeContent__left__blog
+      .homeContent__left__blog__title
+        NEW BLOG
+        .blogBox
+          - @blog[0..4].each do |blog|
+            .blogBox__content
+              =link_to "", admin_blog_path(blog.id), class: 'blog__page' 
+              .blogBox__content__new
+              - if blog.created_at > @yesterday
+                .blogBox__content__new
+                  new!!
+              .blogBox__content__title
+                Title:
+                %sp.blogBox__content__title
+                = blog.title
+              .blogBox__content__createtime
+                DATE
+                = blog.created_at
+        
+      .homeContent__left__foot
+        = link_to 'ALL', admin_blogs_path, class: 'blog__all'
 
-  .homeContent__center
-    .homeContent__center__head NEW GALLERY
-    .galleryBox
-      -# .galeryBox__content
-      - @gallery[0..8].each do |gallery|
-        .galleryBox__image
-          = link_to (image_tag gallery.image.variant(combine_options:{resize:"180x180^",crop:"180x180+0+0",gravity: :center}).processed), admin_gallery_path(gallery.id), class: 'galleryBox__image__file'
-          .galleryBox__image__new
-            - if gallery.created_at > @yesterday
-              .galleryBox__image__new
-              new!!
-          .galleryBox__image__title
-            = gallery.title
+    .homeContent__center
+      .homeContent__center__head 
+        NEW GALLERY
+      .galleryBox
+        - @gallery[0..8].each do |gallery|
+          .galleryBox__image
+            = link_to (image_tag gallery.image.variant(combine_options:{resize:"280x280^",crop:"300x300+0+0",gravity: :center}).processed), admin_gallery_path(gallery.id), class: 'galleryBox__image__file'
+            .galleryBox__image__new
+              - if gallery.created_at > @yesterday
+                .galleryBox__image__new
+                new!!
+            .galleryBox__image__title
+              = gallery.title
 
-    .homeContent__center__foot
-      = link_to 'ALL', admin_galleries_path, class: 'gallery__all'
+      .homeContent__center__foot
+        = link_to 'ALL', admin_galleries_path, class: 'gallery__all'
 
   .homeContent__right
     = render "layouts/homeContent__right"
