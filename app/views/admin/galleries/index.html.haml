@@ -5,9 +5,9 @@
     .galleryIndex__title
       GALLERY
     .galleryIndex__gallery
-    - @gallery.each do |gallery|
-      -# .galleryIndex__gallery__list
-      = link_to (image_tag gallery.image, width: "200px"), admin_gallery_path(gallery.id)
+      - @gallery.each do |gallery|
+        -# .galleryIndex__gallery__list
+        = link_to (image_tag gallery.image, width: "300px"), admin_gallery_path(gallery.id)
 
   .homeContent__right
     = render "layouts/homeContent__right"

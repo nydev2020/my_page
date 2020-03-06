@@ -3,9 +3,14 @@
   .galleryIndex__title {
     font-size: 36px;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .galleryIndex__gallery {
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-auto-flow: row dense;
+    // grid-auto-flow: column dense;
 
   }
 
